@@ -24,7 +24,6 @@ func getURLsFromHTML(htmlBody, rawBaseURL string) ([]string, error){
             fmt.Errorf("Error parsing URL: %w", err)
             break
           }
-          fmt.Printf("%v - %#v\n", a.Val, parsedURL)
           if parsedURL.Scheme == ""{
             absoluteURLs = append(absoluteURLs, rawBaseURL + parsedURL.Path)
           }else{
